@@ -7,10 +7,20 @@ import{Quote} from '../quote'
 })
 export class QuoteComponent implements OnInit {
 quotes=[
-  new Quote(1,"an"),
-  new Quote(2,"buy"),
+  new Quote(1,"any", "wellcome"),
+  new Quote(2,"buy","hello"),
 ]
-  constructor() { }
+
+toogleDetails(index){
+  this.quotes[index].showDescription= ! this.quotes[index].showDescription;
+}
+
+completeQuote(isComplete,index){
+  if(isComplete){
+    this.quotes.splice(index,1);
+  }
+}
+  // constructor() { }
 
   ngOnInit() {
   }
